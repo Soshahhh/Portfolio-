@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soroush Shahhoseini · Architect</title>
+    <meta
+      name="description"
+      content="Portfolio of Soroush Shahhoseini, architect working across design, AI in architecture and architectural presentation."
+    />
+    <meta property="og:title" content="Soroush Shahhoseini · Architect" />
+    <meta
+      property="og:description"
+      content="A portfolio that is still under construction, like its author."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#edeeeb" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      try {
+        var t = localStorage.getItem('ss-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="./assets/index-DyYZb7pF.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-nEXykPI1.css">
+  </head>
+  <body>
+    <!-- Loading screen: the site is "set out" and built while the page loads. Self-contained, so it shows before any script or stylesheet arrives. -->
+    <div class="loader" id="loader" role="status" aria-live="polite">
+      <style>.loader{--l-bg:#edeeeb;--l-ink:#17181a;--l-ghost:#17181a47;--l-accent:#d9531e;z-index:1000;background:var(--l-bg);color:var(--l-ink);place-items:center;font-family:Geist Mono Variable,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);display:grid;position:fixed;inset:0}:root[data-theme=dark] .loader{--l-bg:#141517;--l-ink:#e9eae6;--l-ghost:#e9eae64d;--l-accent:#f0703a}.loader.is-done{opacity:0;pointer-events:none;transform:translateY(-2vh)}.loader__box{justify-items:center;gap:22px;display:grid}.loader svg{width:min(240px,56vw);height:auto;overflow:visible}.loader svg *{fill:none;stroke-linecap:square}.loader .l-ghost{stroke:var(--l-ghost);stroke-width:.7px}.loader .l-ink{stroke:var(--l-ink);stroke-width:.95px}.loader .l-slab{stroke:var(--l-ink);stroke-width:1.7px}.loader .l-crane{stroke:var(--l-accent);stroke-width:.9px}.loader .l-load{fill:var(--l-accent);stroke:none}.loader__read{text-transform:uppercase;letter-spacing:.2em;justify-items:center;gap:6px;font-size:11px;display:grid}.loader__level{letter-spacing:.08em;color:var(--l-accent);font-variant-numeric:tabular-nums;font-size:13px}.loader__msg{opacity:.72;min-height:1.4em}.loader__msg.is-in{animation:.45s both loader-in}@keyframes loader-in{0%{opacity:0;transform:translateY(4px)}to{opacity:.72;transform:none}}</style>
+      <div class="loader__box">
+        <svg viewBox="0 0 160 140" aria-hidden="true">
+          <!-- setting out: grid axes and ground -->
+          <path class="l-ghost" data-t="0 .16" stroke-dasharray="2 3" d="M30 12V130M60 12V130M90 12V130M120 12V130" />
+          <path class="l-ghost" data-t=".04 .2" d="M4 120H156" />
+          <!-- foundation -->
+          <path class="l-ink" data-t=".14 .3" d="M24 120V126H126V120" />
+          <!-- columns and slabs, floor by floor -->
+          <path class="l-ink" data-t=".28 .4" d="M30 120V94M60 120V94M90 120V94M120 120V94" />
+          <path class="l-slab" data-t=".38 .46" d="M26 94H124" />
+          <path class="l-ink" data-t=".44 .54" d="M30 94V70M60 94V70M90 94V70M120 94V70" />
+          <path class="l-slab" data-t=".52 .6" d="M26 70H124" />
+          <path class="l-ink" data-t=".58 .66" d="M30 70V46M60 70V46M90 70V46M120 70V46" />
+          <path class="l-ghost" data-t=".64 .72" stroke-dasharray="3 3" d="M26 46H124M30 46V24M120 46V24M26 24H124" />
+          <!-- the crane: always still at work -->
+          <path class="l-crane" data-t=".6 .74" d="M140 120V14M144 120V14M140 26L144 18M140 38L144 30M140 50L144 42M140 62L144 54M140 74L144 66M140 86L144 78M140 98L144 90M140 110L144 102" />
+          <path class="l-crane" data-t=".72 .84" d="M96 14H158M96 18H158M142 4L96 14M142 4L158 14M142 4V14" />
+          <path class="l-crane" id="l-hook" data-t=".8 .9" d="M106 18V36" />
+          <rect class="l-load" id="l-load" x="102" y="36" width="8" height="4" opacity="0" />
+        </svg>
+        <div class="loader__read">
+          <span class="loader__level" id="loader-level" dir="ltr">+0.00</span>
+          <span class="loader__msg" id="loader-msg"></span>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var root = document.getElementById('loader');
+          var msgs = ['Setting out the grid', 'Pouring the foundation', 'Raising the columns', 'Casting the slabs', 'Hoisting the crane', 'Clearing the site for visitors'];
+          var parts = [].slice.call(root.querySelectorAll('[data-t]')).map(function (el) {
+            var t = el.getAttribute('data-t').split(' ').map(Number);
+            var len = el.getTotalLength ? el.getTotalLength() : 100;
+            el.style.strokeDasharray = el.getAttribute('stroke-dasharray') ? '' : len + ' ' + len;
+            return { el: el, a: t[0], b: t[1], len: len, dashed: !!el.getAttribute('stroke-dasharray') };
+          });
+          var hook = document.getElementById('l-hook');
+          var load = document.getElementById('l-load');
+          var msgEl = document.getElementById('loader-msg');
+          var levelEl = document.getElementById('loader-level');
+          var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+          var CYCLE = 3600;
+          var start = performance.now();
+          var shownMsg = -1;
+          var finishing = 0;
+          var progress = 0;
+          var lastT = 0;
+          var fromT = 0;
+          function frame(now) {
+            if (!root.isConnected) return;
+            // One build cycle loops while waiting; when the page is ready the drawing completes and the screen lifts.
+            var t = reduce ? 1 : finishing ? fromT + (1 - fromT) * Math.min(1, (now - start) / 500) : ((now - start) % CYCLE) / CYCLE;
+            lastT = t;
+            parts.forEach(function (p) {
+              var k = Math.max(0, Math.min(1, (t - p.a) / (p.b - p.a)));
+              if (p.dashed) p.el.style.opacity = k;
+              else p.el.style.strokeDashoffset = p.len * (1 - k);
+            });
+            var swing = Math.sin(now / 520) * 2.2;
+            hook.setAttribute('d', 'M106 18L' + (106 + swing).toFixed(2) + ' 36');
+            load.setAttribute('x', (102 + swing).toFixed(2));
+            load.setAttribute('opacity', t > 0.88 ? 1 : 0);
+            // Progress creeps towards 90% on its own and jumps to the top when done.
+            progress += ((finishing ? 1 : 0.9) - progress) * (finishing ? 0.2 : 0.012);
+            levelEl.textContent = '+' + (progress * 14.5).toFixed(2);
+            var m = finishing ? msgs.length - 1 : Math.min(msgs.length - 2, Math.floor(t * (msgs.length - 1)));
+            if (m !== shownMsg) {
+              shownMsg = m;
+              msgEl.textContent = msgs[m];
+              msgEl.classList.remove('is-in');
+              void msgEl.offsetWidth;
+              msgEl.classList.add('is-in');
+            }
+            requestAnimationFrame(frame);
+          }
+          requestAnimationFrame(frame);
+          window.__loaderDone = function () {
+            if (finishing) return;
+            finishing = 1;
+            fromT = lastT;
+            start = performance.now();
+            setTimeout(function () {
+              root.classList.add('is-done');
+              setTimeout(function () { root.remove(); }, 900);
+            }, reduce ? 0 : 650);
+          };
+        })();
+      </script>
+    </div>
+
+    <a class="skip" href="#about" data-i18n="skip">Skip to content</a>
+
+    <header class="nav">
+      <a class="nav__brand" href="#about" data-scroll="about">
+        <span class="nav__mark" aria-hidden="true"></span>
+        <span data-i18n="name">Soroush Shahhoseini</span>
+        <span class="nav__tag"><span data-i18n="brandTag">Portfolio</span> <span class="nav__ver" id="build-version" dir="ltr"></span></span>
+      </a>
+      <nav class="nav__links" aria-label="Sections"></nav>
+      <div class="nav__tools">
+        <button class="nav__btn nav__btn--icon" id="theme-toggle" type="button" aria-label="Toggle theme">
+          <i class="ph ph-circle-half" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="stage" id="stage">
+      <canvas id="scene"></canvas>
+      <div class="board">
+        <div class="board__title" data-i18n="boardTitle">Project board</div>
+        <dl>
+          <div><dt data-i18n="boardProject">Project</dt><dd data-i18n="boardProjectValue">Soroush Shahhoseini</dd></div>
+          <div><dt data-i18n="boardStarted">Started</dt><dd data-i18n="boardStartedValue">2003</dd></div>
+          <div class="board__chapter"><dt data-i18n="boardChapter">Chapter</dt><dd class="board__open" id="board-chapter"></dd></div>
+        </dl>
+      </div>
+      <button class="stage__play" id="stage-play" type="button">
+        <i class="ph ph-hand-pointing" aria-hidden="true"></i><span data-i18n="playCrane">Play with the crane</span>
+      </button>
+      <div class="stage__playbar">
+        <span data-i18n="playHint">Drag to turn the crane</span>
+        <button class="icon-btn" id="stage-exit" type="button"><i class="ph ph-x" aria-hidden="true"></i></button>
+      </div>
+      <div class="stage__fallback" data-i18n="noWebgl">The 3D model needs WebGL, which is not available in this browser.</div>
+    </div>
+
+    <a class="cue" href="#academic" data-scroll="academic">
+      <span class="cue__label" data-i18n="scrollCue">Scroll to build</span>
+      <span class="cue__track" aria-hidden="true"><span></span></span>
+    </a>
+
+    <main class="content" id="content">
+      <section class="section section--hero" id="about" data-stage="0"></section>
+      <section class="section" id="academic" data-stage="1"></section>
+      <section class="section" id="professional" data-stage="2"></section>
+      <section class="section" id="software" data-stage="3"></section>
+      <section class="section" id="research" data-stage="4"></section>
+      <section class="section section--last" id="vision" data-stage="5"></section>
+      <footer class="footer" id="contact"></footer>
+    </main>
+
+    <aside class="panel" id="panel" aria-hidden="true" data-native-scroll>
+      <div class="panel__inner" role="dialog" aria-modal="true" aria-labelledby="panel-title"></div>
+    </aside>
+
+    <div class="project" id="project" aria-hidden="true" data-native-scroll>
+      <article class="project__inner" role="dialog" aria-modal="true" aria-labelledby="project-title"></article>
+    </div>
+
+  </body>
+</html>
